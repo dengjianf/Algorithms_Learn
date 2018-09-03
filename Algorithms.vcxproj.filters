@@ -16,6 +16,9 @@
     <Filter Include="源文件\List">
       <UniqueIdentifier>{e2d9bc15-ff15-4278-9340-5640fc2ad53e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Sort">
+      <UniqueIdentifier>{b5e13a7d-ae8e-4097-9cff-c5cbc8220903}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -24,6 +27,12 @@
     <ClCompile Include="list.c">
       <Filter>源文件\List</Filter>
     </ClCompile>
+    <ClCompile Include="insert_sort.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="select_sort.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -31,6 +40,12 @@
     </ClInclude>
     <ClInclude Include="list.h">
       <Filter>源文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="insert_sort.h">
+      <Filter>源文件\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="select_sort.h">
+      <Filter>源文件\Sort</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
