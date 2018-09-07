@@ -21,11 +21,7 @@ int Partion(int *array,int left,int right)
 		{
 			if (array[j] < array[pivot_index])
 			{
-//				exchange(&array[j], &pivot);
-				int tmp = array[j];
-				array[j] = array[pivot_index];
-				array[pivot_index] = tmp;
-
+				swap(&array[j],&array[pivot_index]);
 				pivot_index = j;
 				break;
 			}
@@ -34,11 +30,7 @@ int Partion(int *array,int left,int right)
 		{
 			if (array[i] > array[pivot_index])
 			{
-				//exchange(&array[i], &pivot);
-				int tmp = array[i];
-				array[i] = array[pivot_index];
-				array[pivot_index] = tmp;
-
+				swap(&array[i], &array[pivot_index]);
 				pivot_index = i;
 				break;
 			}
@@ -47,13 +39,13 @@ int Partion(int *array,int left,int right)
 	return pivot_index;
 }
 
-//static inline void exchange(int *num1,int *num2)
-//{
-//	if (*num1 != *num2)
-//	{
-//		int tmp = *num1;
-//		*num1 = *num2;
-//		*num2 = tmp;
-//	 }
-//}
+static inline void swap(int * num1, int * num2)
+{
+	int tmp;
+	tmp = *num1;
+	*num1 = *num2;
+	*num2 = tmp;
+}
+
+
 
