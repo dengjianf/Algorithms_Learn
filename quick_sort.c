@@ -12,26 +12,33 @@
 
 int Partion(int *array,int left,int right)
 {
-	int pivot = array[left];// 算法值得改进的地方
-	int pivot_index = left;
+	int pivot_index = left;//算法值得改进的地方！（随机抓取一个？）
 	int i = left, j = right;
 	
 	while (i!=j)
 	{
 		for ( j = right; j > pivot_index; j--)
 		{
-			if (array[j] < pivot)
+			if (array[j] < array[pivot_index])
 			{
-				exchange(&array[j], &pivot);
+//				exchange(&array[j], &pivot);
+				int tmp = array[j];
+				array[j] = array[pivot_index];
+				array[pivot_index] = tmp;
+
 				pivot_index = j;
 				break;
 			}
 		}
 		for ( i = left; i < pivot_index; i++)
 		{
-			if (array[i] > pivot)
+			if (array[i] > array[pivot_index])
 			{
-				exchange(&array[i], &pivot);
+				//exchange(&array[i], &pivot);
+				int tmp = array[i];
+				array[i] = array[pivot_index];
+				array[pivot_index] = tmp;
+
 				pivot_index = i;
 				break;
 			}
@@ -40,13 +47,13 @@ int Partion(int *array,int left,int right)
 	return pivot_index;
 }
 
-static inline void exchange(int *num1,int *num2)
-{
-	if (*num1 != *num2)
-	{
-		int tmp = *num1;
-		*num1 = *num2;
-		*num2 = tmp;
-	 }
-}
+//static inline void exchange(int *num1,int *num2)
+//{
+//	if (*num1 != *num2)
+//	{
+//		int tmp = *num1;
+//		*num1 = *num2;
+//		*num2 = tmp;
+//	 }
+//}
 
