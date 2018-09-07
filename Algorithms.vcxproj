@@ -149,12 +149,16 @@
     <ClCompile Include="insert_sort.c" />
     <ClCompile Include="list.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="merge_sort.c" />
+    <ClCompile Include="quick_sort.c" />
     <ClCompile Include="select_sort.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="insert_sort.h" />
     <ClInclude Include="list.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="merge_sort.h" />
+    <ClInclude Include="quick_sort.h" />
     <ClInclude Include="select_sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
