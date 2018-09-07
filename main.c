@@ -1,8 +1,8 @@
 #include "main.h"
 #define Debug_Insert_Sort 0 //∆Ù∂Ø≤Â»Î≈≈–Ú—› æ
 #define Debug_Select_Sort 0
-#define Debug_Merge_Sort  0
-#define Debug_Quick_Sort 1
+#define Debug_Merge_Sort  1
+#define Debug_Quick_Sort 0
 
 int main()
 {

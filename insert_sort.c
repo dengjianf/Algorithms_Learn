@@ -1,6 +1,6 @@
 #include "insert_sort.h" 
 
-void InsertSortUp(int *array,int num)//插入排序 最坏运行时间：θ(n^2)
+void InsertSort(int *array,int num)//插入排序 最坏运行时间：θ(n^2)
 {
 	int i = 0,j=0;
 	for (i = 1;i < num;i++) //抽出第 i 个元素，插入已排序好的 Array[0...i-1]的数组

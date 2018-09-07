@@ -1,3 +1,3 @@
 #pragma once
 #include "main.h"
-void InsertSortUp(int *array, int num);
+void InsertSort(int *array, int num);
