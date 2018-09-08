@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="hash_table.c" />
     <ClCompile Include="insert_sort.c" />
     <ClCompile Include="link_list.c" />
     <ClCompile Include="link_queue.c" />
@@ -156,6 +157,7 @@
     <ClCompile Include="select_sort.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="hash_table.h" />
     <ClInclude Include="insert_sort.h" />
     <ClInclude Include="link_list.h" />
     <ClInclude Include="link_queue.h" />

@@ -25,6 +25,9 @@
     <Filter Include="源文件\Stack">
       <UniqueIdentifier>{39c000e4-3b91-48fa-9dae-0cd2f7e497f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\HashTable">
+      <UniqueIdentifier>{98cc103e-0f25-4fc5-b21b-3096c02f3398}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -51,6 +54,9 @@
     <ClCompile Include="link_stack.c">
       <Filter>源文件\Stack</Filter>
     </ClCompile>
+    <ClCompile Include="hash_table.c">
+      <Filter>源文件\HashTable</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -76,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="link_stack.h">
       <Filter>源文件\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="hash_table.h">
+      <Filter>源文件\HashTable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

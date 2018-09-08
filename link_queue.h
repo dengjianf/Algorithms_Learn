@@ -2,7 +2,6 @@
 #define _LINK_QUEUE_H
 #define _CRT_SECURE_NO_WARNINGS 
 #include "main.h"
-
 #define Elemtype int
 
 typedef struct QNode

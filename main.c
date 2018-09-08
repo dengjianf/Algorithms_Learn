@@ -3,7 +3,8 @@
 #define Debug_Select_Sort 0
 #define Debug_Merge_Sort  0
 #define Debug_Quick_Sort 0
-#define Debug_Link_Queue 1
+#define Debug_Link_Queue 0
+#define Debug_HashTable 1
 
 int main()
 {
@@ -61,6 +62,13 @@ int main()
 	length = QueueLength(Queue);
 	printf("length:%d\n", length);
 	QueueDestroy(&Queue);
+#endif
+#if Debug_HashTable
+	HashTable hashTable;
+	HashTableInit(5,&hashTable);
+	InsertKey(&hashTable, 11);
+	ShowHashTable(hashTable);
+
 #endif
 	system("pause");
 }
