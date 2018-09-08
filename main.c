@@ -1,8 +1,9 @@
 #include "main.h"
 #define Debug_Insert_Sort 0 //∆Ù∂Ø≤Â»Î≈≈–Ú—› æ
 #define Debug_Select_Sort 0
-#define Debug_Merge_Sort  1
+#define Debug_Merge_Sort  0
 #define Debug_Quick_Sort 0
+#define Debug_Link_Queue 1
 
 int main()
 {
@@ -41,6 +42,25 @@ int main()
 	{
 		printf("%d", Array[i]);
 	}
+#endif
+#if Debug_Link_Queue
+	LinkQueue Queue;
+	int del_node = 0;
+	int head_node = 0;
+	int length=0;
+	QueueInit(&Queue);
+	QueueCreat(&Queue,10);
+	QueueShow(Queue);
+	EnQueue(&Queue,3);
+	QueueShow(Queue);
+	DeQueue(&Queue,&del_node);
+	printf("del_Node:%d\n", del_node);
+	QueueShow(Queue);
+	QueueHead(Queue,&head_node);
+	printf("head_node:%d\n", head_node);
+	length = QueueLength(Queue);
+	printf("length:%d\n", length);
+	QueueDestroy(&Queue);
 #endif
 	system("pause");
 }

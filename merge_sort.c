@@ -30,7 +30,8 @@ static int Merge(int *array, int left, int mid, int right)
 				index++;
 			}
 		}
-		while (left != _mid)
+//²¹ÆëÊ£ÓàµÄ
+		while (left != _mid)  
 		{
 			array[index] = _array[left];
 			index++;
@@ -42,6 +43,7 @@ static int Merge(int *array, int left, int mid, int right)
 			mid++;
 			index++;
 		}
+//
 		return 0;
 	}
 	else

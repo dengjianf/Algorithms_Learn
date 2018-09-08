@@ -19,13 +19,16 @@
     <Filter Include="源文件\Sort">
       <UniqueIdentifier>{b5e13a7d-ae8e-4097-9cff-c5cbc8220903}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Queue">
+      <UniqueIdentifier>{78f88943-b9ce-44ec-9d73-751eb8e4407c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Stack">
+      <UniqueIdentifier>{39c000e4-3b91-48fa-9dae-0cd2f7e497f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="list.c">
-      <Filter>源文件\List</Filter>
     </ClCompile>
     <ClCompile Include="insert_sort.c">
       <Filter>源文件\Sort</Filter>
@@ -39,13 +42,19 @@
     <ClCompile Include="quick_sort.c">
       <Filter>源文件\Sort</Filter>
     </ClCompile>
+    <ClCompile Include="link_list.c">
+      <Filter>源文件\List</Filter>
+    </ClCompile>
+    <ClCompile Include="link_queue.c">
+      <Filter>源文件\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="link_stack.c">
+      <Filter>源文件\Stack</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="list.h">
-      <Filter>源文件\List</Filter>
     </ClInclude>
     <ClInclude Include="insert_sort.h">
       <Filter>源文件\Sort</Filter>
@@ -58,6 +67,15 @@
     </ClInclude>
     <ClInclude Include="quick_sort.h">
       <Filter>源文件\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="link_list.h">
+      <Filter>源文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="link_queue.h">
+      <Filter>源文件\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="link_stack.h">
+      <Filter>源文件\Stack</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

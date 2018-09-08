@@ -1,6 +1,9 @@
 #pragma once
 #include <stdio.h>
-#include "list.h"
+#include "link_list.h"
+#include "link_queue.h"
+#include "link_stack.h"
+
 #include "insert_sort.h"
 #include "select_sort.h"
 #include "merge_sort.h"
