@@ -1,25 +1,25 @@
 #include "hash_table.h"
 #define MinTableSize 3
 
-int HashTableInit(int tableSize, LinkHashTable *phashTable)
+LinkHashTable *HashTableInit(int tableSize)
 {
 	if (tableSize < MinTableSize)
-		return -1;
-	phashTable = (LinkHashTable*)malloc(sizeof(struct LinkHashTable));//
+		return NULL;
+	LinkHashTable *phashTable = (LinkHashTable*)malloc(sizeof(struct LinkHashTable));//
 	if (phashTable == NULL)
-		return -1;
+		return NULL;
 
 	phashTable->tableSize = tableSize;
 	phashTable->theList = (Linklist*)malloc(sizeof(Linklist)*phashTable->tableSize);
 	if (phashTable->theList == NULL)
-		return -1;
+		return NULL;
 
 	for (int i = 0; i < tableSize; i++)
 	{
 		if (List_Init(&(phashTable->theList[i])))//初始化每一个头指针，防止悬空
-			return -1;
+			return NULL;
 	}
-	return 0;
+	return phashTable;
 }
 int ShowHashTable(LinkHashTable hashTable)
 {
@@ -41,9 +41,9 @@ int ShowHashTable(LinkHashTable hashTable)
 void InsertKey(LinkHashTable _hashTable, int key)
 {
 	LNode* pNode_loc = (LNode*)malloc(sizeof(LNode)) ;
-	printf("size:%d\n", _hashTable.tableSize);
+	//printf("size:%d\n", _hashTable.tableSize);
 	printf("loc:%d\n", ModInt_HashFun(key, _hashTable.tableSize));
-	//pNode_loc = (hashTable.theList[ModInt_HashFun(key, hashTable.tableSize)]);
+	pNode_loc = (_hashTable.theList[ModInt_HashFun(key, _hashTable.tableSize)]);
 	LNode* pNode_tmp = (LNode*)malloc(sizeof(struct LNode));
 	LNode* pNode_new = (LNode*)malloc(sizeof(struct LNode));
 	  

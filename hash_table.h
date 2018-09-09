@@ -10,7 +10,7 @@ typedef struct LinkHashTable
     struct LNode **theList;//指向 指向链表节点的指针 的指针
 }LinkHashTable;
 
-int HashTableInit(int tableSize, LinkHashTable* phashTable);
+LinkHashTable *HashTableInit(int tableSize);
 void InsertKey(LinkHashTable hashTable, int key);
 int ShowHashTable(LinkHashTable hashTable);
 inline static int ModInt_HashFun(int key, int tableSize);

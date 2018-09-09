@@ -65,10 +65,16 @@ int main()
 	QueueDestroy(&Queue);
 #endif
 #if Debug_HashTable
-	LinkHashTable hashTable;
-	HashTableInit(5,&hashTable);
-	InsertKey(hashTable, 11);
-	//ShowHashTable(hashTable);
+	LinkHashTable *hashTable=malloc(sizeof(LinkHashTable));
+	hashTable =HashTableInit(5);
+	InsertKey(*hashTable, 11);
+	ShowHashTable(*hashTable);
+	InsertKey(*hashTable, 13);
+	ShowHashTable(*hashTable);
+	InsertKey(*hashTable, 4);
+	ShowHashTable(*hashTable);
+	InsertKey(*hashTable, 3);
+	ShowHashTable(*hashTable);
 #endif
 #if	Debug_LinkList
 	Linklist linklist;
