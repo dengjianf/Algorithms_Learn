@@ -5,6 +5,7 @@
 #define Debug_Quick_Sort 0
 #define Debug_Link_Queue 0
 #define Debug_HashTable 1
+#define Debug_LinkList 0
 
 int main()
 {
@@ -64,11 +65,16 @@ int main()
 	QueueDestroy(&Queue);
 #endif
 #if Debug_HashTable
-	HashTable hashTable;
+	LinkHashTable hashTable;
 	HashTableInit(5,&hashTable);
-	InsertKey(&hashTable, 11);
-	ShowHashTable(hashTable);
-
+	InsertKey(hashTable, 11);
+	//ShowHashTable(hashTable);
 #endif
-	system("pause");
+#if	Debug_LinkList
+	Linklist linklist;
+	List_Init(&linklist);
+	Create_List(linklist,5,1);
+	ListShow(linklist);
+#endif
+	//system("pause");
 }

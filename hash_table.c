@@ -1,37 +1,33 @@
 #include "hash_table.h"
 #define MinTableSize 3
 
-
-
-int HashTableInit(int tableSize, HashTable * phashTable)
+int HashTableInit(int tableSize, LinkHashTable *phashTable)
 {
 	if (tableSize < MinTableSize)
 		return -1;
-
-	HashTable* hash_table = (HashTable*)malloc(sizeof(struct HashTable));//
-	if (hash_table == NULL)
+	phashTable = (LinkHashTable*)malloc(sizeof(struct LinkHashTable));//
+	if (phashTable == NULL)
 		return -1;
 
-	hash_table->theList = (Linklist*)malloc(sizeof(Linklist)*tableSize);
-	if (hash_table->theList == NULL)
+	phashTable->tableSize = tableSize;
+	phashTable->theList = (Linklist*)malloc(sizeof(Linklist)*phashTable->tableSize);
+	if (phashTable->theList == NULL)
 		return -1;
 
 	for (int i = 0; i < tableSize; i++)
 	{
-		if (List_Init(hash_table->theList))//初始化每一个头指针，防止悬空
+		if (List_Init(&(phashTable->theList[i])))//初始化每一个头指针，防止悬空
 			return -1;
 	}
-
-	phashTable = hash_table;
 	return 0;
 }
-int ShowHashTable(HashTable hashTable)
+int ShowHashTable(LinkHashTable hashTable)
 {
 	printf("Size of HashTable:%d\n", hashTable.tableSize);
 
 	for (int i = 0; i < hashTable.tableSize; i++)
 	{
-		LNode* pNode_tmp = hashTable.theList[i].next;
+		LNode *pNode_tmp = ((hashTable.theList[i]))->next;
 		printf("hashTable[%d]: ",i);
 		while (pNode_tmp != NULL)
 		{
@@ -41,25 +37,31 @@ int ShowHashTable(HashTable hashTable)
 		printf("\n");
 	}
 }
-
-void InsertKey(HashTable* p_hashTable,int key)
+ 
+void InsertKey(LinkHashTable _hashTable, int key)
 {
-	LNode* pNode_tmp = p_hashTable->theList[ModInt_Hash(key,p_hashTable->tableSize)].next;//你懂的！
-	LNode Node_new;Node_new.next = NULL;
+	LNode* pNode_loc = (LNode*)malloc(sizeof(LNode)) ;
+	printf("size:%d\n", _hashTable.tableSize);
+	printf("loc:%d\n", ModInt_HashFun(key, _hashTable.tableSize));
+	//pNode_loc = (hashTable.theList[ModInt_HashFun(key, hashTable.tableSize)]);
+	LNode* pNode_tmp = (LNode*)malloc(sizeof(struct LNode));
+	LNode* pNode_new = (LNode*)malloc(sizeof(struct LNode));
+	  
+	pNode_new->data = key;
+	pNode_new->next = NULL;
 
-	while (pNode_tmp !=NULL)
-	{
-		pNode_tmp=pNode_tmp->next;
-    }
-	Node_new.data = key;
-    
-	*(pNode_tmp->next) = Node_new;
+	pNode_tmp = pNode_loc->next;
+	pNode_loc->next = pNode_new;
+	pNode_new->next = pNode_tmp;
 }
 
-
-
-inline static int ModInt_Hash(int key,int tableSize)//
+inline static int ModInt_HashFun(int key,int tableSize)//
 {
-	return  key % tableSize;
+	return  key%tableSize;
+}
+
+inline int DRCChr_HashFun(char * key, int tableSize)
+{
+	return 0;
 }
 
